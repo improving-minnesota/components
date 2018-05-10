@@ -1,16 +1,17 @@
-import React from "react";
-import styled from "react-emotion";
+import React from 'react';
+import styled from 'react-emotion';
 import T from 'prop-types';
 
 import { Logo } from '../logo';
+import { Github } from '../social';
 import { FONT_FAMILY } from '../../style';
 
 const Container = styled('header')({
-  display: "flex",
+  display: 'flex',
   alignItems: 'center',
   boxSizing: 'border-box',
-  justifyContent: "space-between",
-  fontFamily: "sans-serif",
+  justifyContent: 'space-between',
+  fontFamily: 'sans-serif',
   backgroundColor: '#d8292f',
   padding: '2.25rem 2rem',
   width: '100%',
@@ -29,21 +30,35 @@ const Container = styled('header')({
 const Title = styled('h1')({
   color: 'white',
   fontFamily: FONT_FAMILY,
-  fontSize: 24,
+  fontSize: 20,
   margin: 0,
   padding: 0,
   textTransform: 'uppercase'
 });
 
-export function Header({ title }) {
+const Details = styled('div')({
+  display: 'flex',
+  alignItems: 'center'
+});
+
+const GithubIcon = styled(Github)({
+  marginLeft: '1rem'
+});
+
+export function Header({ children, githubLink, title }) {
   return (
     <Container>
       <Logo theme="light" style={{ height: 30 }} />
-      {title && <Title>{title}</Title>}
+      <Details>
+        {title && <Title>{title}</Title>}
+        {githubLink && <GithubIcon href={githubLink} size={20} />}
+        {children}
+      </Details>
     </Container>
   );
 }
 
 Header.propTypes = {
+  githubLink: T.string,
   title: T.string
 };

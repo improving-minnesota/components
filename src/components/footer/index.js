@@ -1,16 +1,16 @@
-import React from "react";
+import React from 'react';
 import T from 'prop-types';
-import styled from "react-emotion";
+import styled from 'react-emotion';
 
 import { Logo } from '../logo';
 import { Facebook, Github, Twitter } from '../social';
 import { FONT_FAMILY } from '../../style';
 
-const Container = styled("footer")({
-  display: "flex",
+const Container = styled('footer')({
+  display: 'flex',
   alignItems: 'center',
   boxSizing: 'border-box',
-  justifyContent: "space-between",
+  justifyContent: 'space-between',
   fontFamily: FONT_FAMILY,
   backgroundColor: '#1a1a1a',
   padding: '4rem 2rem',
@@ -27,23 +27,23 @@ const Container = styled("footer")({
   }
 });
 
-const List = styled("ul")({
+const List = styled('ul')({
   margin: 0,
   padding: 0,
   whiteSpace: 'nowrap'
 });
 
-const ListItem = styled("li")({
-  display: "inline-block",
-  listStyleType: "none",
-  marginRight: "0.5rem",
+const ListItem = styled('li')({
+  display: 'inline-block',
+  listStyleType: 'none',
+  marginRight: '0.5rem',
   textTransform: 'uppercase',
   fontSize: 12
 });
 
-const Link = styled("a")({
-  color: "#CCC",
-  textDecorationSkip: "ink",
+const Link = styled('a')({
+  color: '#CCC',
+  textDecorationSkip: 'ink',
   padding: '0.5rem 1rem',
   transition: '175ms ease-in-out',
   ':hover': {
@@ -66,14 +66,18 @@ const Social = styled('div')({
   right: 0
 });
 
+const SocialIcon = Icon => styled(Icon)({
+  margin: 12
+});
+
 const defaultLinks = [
   {
-    href: "https://objectpartners.com/contact",
-    label: "Contact us"
+    href: 'https://objectpartners.com/contact',
+    label: 'Contact us'
   },
   {
-    href: "https://objectpartners.com/careers",
-    label: "Join us"
+    href: 'https://objectpartners.com/careers',
+    label: 'Join us'
   }
 ];
 
@@ -89,9 +93,12 @@ export function Footer({ className, links }) {
         ))}
       </List>
       <Social>
-        <Facebook />
-        <Twitter />
-        <Github />
+        {
+          [Facebook, Twitter, Github]
+            .map((Icon, index) => (
+              <Icon key={index} style={{ marginLeft: 18, marginRight: 18 }} />
+            ))
+        }
       </Social>
     </Container>
   );
@@ -99,10 +106,12 @@ export function Footer({ className, links }) {
 
 Footer.propTypes = {
   className: T.string,
-  links: T.arrayOf(T.shape({
-    href: T.string.isRequired,
-    label: T.string.isRequired
-  }))
+  links: T.arrayOf(
+    T.shape({
+      href: T.string.isRequired,
+      label: T.string.isRequired
+    })
+  )
 };
 
 Footer.defaultProps = {
