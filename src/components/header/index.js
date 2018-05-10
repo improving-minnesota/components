@@ -50,10 +50,14 @@ const GithubIcon = styled(Github)({
   marginLeft: '1rem'
 });
 
-export function Header({ children, githubLink, logoHref, title }) {
+const renderLogo = ({ Logo: LogoComponent }) => (
+  <Logo theme="light" style={{ height: 30 }} />
+);
+
+export function Header({ children, githubLink, logoHref, renderLogo, title }) {
   return (
     <Container>
-      <Link href={logoHref}><Logo theme="light" style={{ height: 30 }} /></Link>
+      {renderLogo({ Logo })}
       <Details>
         {title && <Title>{title}</Title>}
         {githubLink && <GithubIcon href={githubLink} size={20} />}
@@ -66,5 +70,10 @@ export function Header({ children, githubLink, logoHref, title }) {
 Header.propTypes = {
   githubLink: T.string,
   logoHref: T.string.isRequired,
+  renderLogo: T.func,
   title: T.string
+};
+
+Header.defaultProps = {
+  renderLogo
 };

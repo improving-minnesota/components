@@ -1,6 +1,6 @@
 {
   "name": "@objectpartners/components",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "React components to get a kickstart on your next, great OPi project",
   "main": "dist/components.js",
   "module": "dist/components-es.js",
