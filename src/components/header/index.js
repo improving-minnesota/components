@@ -36,6 +36,11 @@ const Title = styled('h1')({
   textTransform: 'uppercase'
 });
 
+const Link = styled('a')({
+  color: 'inherit',
+  textDecoration: 'none'
+});
+
 const Details = styled('div')({
   display: 'flex',
   alignItems: 'center'
@@ -45,10 +50,10 @@ const GithubIcon = styled(Github)({
   marginLeft: '1rem'
 });
 
-export function Header({ children, githubLink, title }) {
+export function Header({ children, githubLink, logoHref, title }) {
   return (
     <Container>
-      <Logo theme="light" style={{ height: 30 }} />
+      <Link href={logoHref}><Logo theme="light" style={{ height: 30 }} /></Link>
       <Details>
         {title && <Title>{title}</Title>}
         {githubLink && <GithubIcon href={githubLink} size={20} />}
@@ -60,5 +65,6 @@ export function Header({ children, githubLink, title }) {
 
 Header.propTypes = {
   githubLink: T.string,
+  logoHref: T.string.isRequired,
   title: T.string
 };
