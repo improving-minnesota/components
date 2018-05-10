@@ -1,17 +1,17 @@
-# elements
+# components
 
 React components for getting up and started with OPi-branded React applications.
 
 ## Install
 
 ```bash
-yarn add @objectpartners/elements
+yarn add @objectpartners/components
 ```
 
 with peer-dependencies
 
 ```bash
-yarn add @objectpartners/elements react@^16.0.0 react-dom@^16.0.0 emotion react-emotion
+yarn add @objectpartners/components react@^16.0.0 react-dom@^16.0.0 emotion react-emotion
 ```
 
 ## Usage
@@ -20,7 +20,7 @@ yarn add @objectpartners/elements react@^16.0.0 react-dom@^16.0.0 emotion react-
 import React from 'react';
 import styled from 'react-emotion';
 
-import { Header, Footer } from '@objectpartners/elements';
+import { Header, Footer } from '@objectpartners/components';
 
 const Container = styled.div({
   display: 'flex',
