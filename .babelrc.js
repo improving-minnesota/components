@@ -13,7 +13,7 @@ module.exports = {
     ],
     'babel-preset-react'
   ],
-  plugins: [].concat(PROD ? [
+  plugins: ['babel-plugin-transform-object-rest-spread'].concat(PROD ? [
     'babel-plugin-external-helpers',
     'babel-plugin-transform-react-remove-prop-types'
   ] : [])
