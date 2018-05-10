@@ -59,9 +59,11 @@ const StyledLogo = styled(Logo)({
 const Social = styled('div')({
   display: 'flex',
   alignItems: 'center',
+  justifyContent: 'center',
   position: 'absolute',
-  right: 8,
-  bottom: 8
+  bottom: '1rem',
+  left: 0,
+  right: 0
 });
 
 const defaultLinks = [
