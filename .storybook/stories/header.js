@@ -11,16 +11,16 @@ const TwitterIcon = styled(Twitter)({
 
 storiesOf('Header', module)
   .add('with default styling', () => (
-    <Header />
+    <Header logoHref="/" />
   ))
   .add('with title', () => (
-    <Header title="React training" />
+    <Header logoHref="/" title="React training" />
   ))
   .add('with Github link', () => (
-    <Header githubLink="https://github.com/objectpartners/components" />
+    <Header logoHref="/" githubLink="https://github.com/objectpartners/components" />
   ))
   .add('with title and Github link', () => (
-    <Header title="React training" githubLink="https://github.com/objectpartners/components" />
+    <Header logoHref="/" title="React training" githubLink="https://github.com/objectpartners/components" />
   ))
   .add('with children', () => (
     <Header>
