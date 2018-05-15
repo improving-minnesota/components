@@ -36,7 +36,7 @@ export function Logo({ className, theme: definedTheme, textColor, style }) {
   const theme = THEME[definedTheme];
   return (
     <Container className={className} style={style}>
-      <Svg viewBox="0 0 241.8 34.2">
+      <Svg viewBox="0 0 241.8 34.2" preserveAspectRatio="xMinYMin meet">
         <path
           className="swoop"
           fill={theme.accent}
