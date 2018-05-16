@@ -13,9 +13,12 @@ const Container = styled('header')({
   justifyContent: 'space-between',
   fontFamily: 'sans-serif',
   backgroundColor: '#d8292f',
-  padding: '2.25rem 2rem',
+  padding: '2.25rem 0.5rem',
   width: '100%',
   position: 'relative',
+  '@media only screen and (min-width: 768px)': {
+    padding: '2.25rem 2rem',
+  },
   '::after': {
     content: JSON.stringify(''),
     position: 'absolute',
@@ -30,10 +33,13 @@ const Container = styled('header')({
 const Title = styled('h1')({
   color: 'white',
   fontFamily: FONT_FAMILY,
-  fontSize: 20,
+  fontSize: 16,
   margin: 0,
   padding: 0,
-  textTransform: 'uppercase'
+  textTransform: 'uppercase',
+  '@media only screen and (min-width: 768px)': {
+    fontSize: 20,
+  },
 });
 
 const Link = styled('a')({

@@ -13,9 +13,12 @@ const Container = styled('footer')({
   justifyContent: 'space-between',
   fontFamily: FONT_FAMILY,
   backgroundColor: '#1a1a1a',
-  padding: '4rem 2rem',
+  padding: '4rem 0.5rem',
   width: '100%',
   position: 'relative',
+  '@media only screen and (min-width: 768px)': {
+    padding: '4rem 2rem',
+  },
   '::before': {
     content: JSON.stringify(''),
     position: 'absolute',
@@ -44,8 +47,11 @@ const ListItem = styled('li')({
 const Link = styled('a')({
   color: '#CCC',
   textDecorationSkip: 'ink',
-  padding: '0.5rem 1rem',
+  padding: '0.5rem',
   transition: '175ms ease-in-out',
+  '@media only screen and (min-width: 768px)': {
+    padding: '0.5rem 1rem',
+  },
   ':hover': {
     color: '#FFF',
     textDecoration: 'none'
