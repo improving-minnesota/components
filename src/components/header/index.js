@@ -4,7 +4,7 @@ import T from 'prop-types';
 
 import { Logo } from '../logo';
 import { Github } from '../social';
-import { FONT_FAMILY } from '../../style';
+import { HEADER_BG_COLOR, FONT_FAMILY } from '../../style';
 
 const Container = styled('header')({
   display: 'flex',
@@ -12,7 +12,7 @@ const Container = styled('header')({
   boxSizing: 'border-box',
   justifyContent: 'space-between',
   fontFamily: 'sans-serif',
-  backgroundColor: '#d8292f',
+  backgroundColor: HEADER_BG_COLOR,
   padding: '2.25rem 0.5rem',
   width: '100%',
   position: 'relative',

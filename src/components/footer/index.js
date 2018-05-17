@@ -4,7 +4,7 @@ import styled from 'react-emotion';
 
 import { Logo } from '../logo';
 import { Facebook, Github, Twitter } from '../social';
-import { FONT_FAMILY } from '../../style';
+import { FOOTER_BG_COLOR, FONT_FAMILY } from '../../style';
 
 const Container = styled('footer')({
   display: 'flex',
@@ -12,7 +12,7 @@ const Container = styled('footer')({
   boxSizing: 'border-box',
   justifyContent: 'space-between',
   fontFamily: FONT_FAMILY,
-  backgroundColor: '#1a1a1a',
+  backgroundColor: FOOTER_BG_COLOR,
   padding: '4rem 0.5rem',
   width: '100%',
   position: 'relative',
