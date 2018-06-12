@@ -60,9 +60,9 @@ const renderLogo = ({ Logo: LogoComponent }) => (
   <Logo theme="light" style={{ height: 30 }} />
 );
 
-export function Header({ children, githubLink, logoHref, renderLogo, title }) {
+export function Header({ children, className, githubLink, logoHref, renderLogo, title }) {
   return (
-    <Container>
+    <Container className={className}>
       {renderLogo({ Logo })}
       <Details>
         {title && <Title>{title}</Title>}
